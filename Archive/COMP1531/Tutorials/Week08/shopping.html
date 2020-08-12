@@ -1,0 +1,12 @@
+<form method = "POST">
+    <input name = "item" placeholder = "Enter item">
+    <button type = "submit"> Add to cart </button>
+</form>
+
+{{shopping_list}}
+
+<!-- current user global variable doesn't need to be passed into any render template--->
+<h1> hello {{current_user.get_name()}} </h1>
+<form method = "POST", action="{{url_for('logout')}}">
+    <button type = "submit"> Logout </button>
+</form>

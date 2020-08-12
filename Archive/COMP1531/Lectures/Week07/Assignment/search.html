@@ -1,0 +1,16 @@
+<form action = "{{url_for('search')}}" method = "get">
+<!-- action specifies what URL to invoke when submit button pressed--->
+<h1> SEARCH </h1>
+<h2> <input type = "text" name = "s" placeholder = "What do you feel like today"> </br>
+<input type = "radio" name = "select" value = "all_btn" {% if selected == 0 %} checked {% endif %}
+<input type = "radio" name = "select" value = "cat_btn" {% if selected == 1 %} checked {% endif %} 
+DROP DOWN BOX
+<select name = "cat"> 
+    {% for i in choices %} 
+    <option value = "{{ i }}"> {{i}}</option>
+    {% endfor %}
+    #represnts option in drop down box
+<!-- radio buttons, circles next to buttons. Set of radio buttons have same name--->
+<!-- when there is nothing inside, what will the cell say--->
+<!-- if category selected, value passed into "select" is "cat_btn", if searching by "all items" is selected, "all_bnt" is the value passed into "select"--->
+

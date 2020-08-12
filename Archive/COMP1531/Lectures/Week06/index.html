@@ -1,0 +1,20 @@
+<!doctype html> 
+
+<html>
+    <head>
+    <body>
+    
+    <p> {{list_numbers[0]}} </p> #prints out first number in the list in app.py
+    #double curly braces and data inside is a special jinja syntax that allows us to display data from our python
+    #in jinja, we can also loop through lists
+    { % for number in list_numbers %}
+        <p>{{number}}</p>
+    {% endfor %} #need to have an end for the for loop
+    #can still use paragraph tabs 
+    # <a href = "#"> {{number}} </a> # creates a link of all numbers
+    </body>
+    </head>
+
+</html>
+
+#jinja 

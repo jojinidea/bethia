@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block app_content %}
+
+    <h1> Make a Booking </h1>
+    <form name = "booking_form", method = "POST" action = "/">
+        <input type = "radio" name = time_slot>8.00<br>
+        <input type = "radio" name = time_slot>8.30<br>
+        <input type = "radio" name = time_slot>9.00<br>
+        <input type = "radio" name = time_slot>9.30<br>
+        
+	{{providers}}<br>
+       
+    <input type = "submit" value = "Submit", name = "submit"> <br>
+    </form>
+        
+{% endblock %}

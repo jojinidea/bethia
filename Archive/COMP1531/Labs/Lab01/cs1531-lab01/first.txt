@@ -1,0 +1,5 @@
+adding new line - merge conflict
+hello 
+second line change
+third line change
+
