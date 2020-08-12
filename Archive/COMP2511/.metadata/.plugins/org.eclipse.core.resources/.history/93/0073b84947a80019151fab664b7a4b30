@@ -1,0 +1,61 @@
+package tests;
+
+import org.junit.Test;
+
+import javafx.scene.input.KeyCode;
+import unsw.dungeon.*;
+
+import org.junit.Ignore;
+import static org.junit.Assert.assertEquals;
+
+public class US1Tests {
+
+	// test US1.1: player movement
+	// acceptance criteria:
+	// a) a player should move only one adjacent square up/down/left/right per up/down/left/right key they press with the direction of their movement corresponding to the direction of the key they press
+	
+	@Test
+	public void testUS1_1() {	
+		Dungeon dungeon = new Dungeon(10,10);
+		Player player = new Player(dungeon, 1,10);
+		dungeon.setPlayer(player);
+		// test up
+		player.move(KeyCode.UP); 
+		assertEquals(player.getCoordinate(), new Point(1,9));
+		// test down
+		player.move(KeyCode.DOWN);
+		assertEquals(player.getCoordinate(), new Point(1,10));
+		// test right
+		player.move(KeyCode.RIGHT);
+		assertEquals(player.getCoordinate(), new Point(2,10));
+		// test left
+		player.move(KeyCode.LEFT); 
+		assertEquals(player.getCoordinate(), new Point(1,10));
+	}
+	
+	// test US1.2: walls as obstacles
+	// acceptance criteria
+	// a) No player should be able to move through a wall 
+	// b) No boulder should be able to move through a wall 
+	// c) No enemy should be able to move through a wall 
+
+	@Test
+	public void testUS1_2() {
+		Dungeon dungeon = new Dungeon(10,10);
+		Player player = new Player(dungeon, 1,10);
+		dungeon.setPlayer(player);
+		dungeon.addEntity(new Wall(2,10));
+		
+		// a) Test a player cannot walk through a wall (wall situated on player's right)
+		player.move(KeyCode.RIGHT);
+		assertEquals(player.getCoordinate(), new Point(1,10)); // check player's coordinate has not changed
+		
+		// b) Test a boulder cannot be moved through a wall (wall situated beneath boulder)
+		Boulder boulder = new Boulder(2,9);
+		dungeon.addEntity(boulder);
+		boulder.move(Direction.DOWN, dungeon); // move the boulder down onto the wall, expect no update to its position
+		assertEquals(boulder.getCoordinate(), new Point(2,9));
+		
+	}
+	
+}

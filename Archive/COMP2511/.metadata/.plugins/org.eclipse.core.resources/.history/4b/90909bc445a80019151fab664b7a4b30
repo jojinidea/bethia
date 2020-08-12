@@ -1,0 +1,58 @@
+package unsw.dungeon;
+
+import java.util.ArrayList;
+
+public class Boulder extends Item {
+	
+	public Boulder(int x, int y) {
+		super(x, y);
+	    setObstacleBehaviour(new BoulderObstacle(this));
+	    setUseBehaviour(new UseBoulder(this)); 
+	    setCollectBehaviour(new CollectNonCollectible());
+	}
+	    
+	@Override
+	public String toString() {
+		String debugString = "[Boulder: x " + this.getX() + " y: " + this.getY() + "]";
+	    return debugString;
+	}
+	
+	// determines if boulder is moveable or not given a list of entities next to the boulder in the attempted direction of movement
+	public boolean moveable(Direction direction, Dungeon dungeon) {
+		// if any of the entities are unopened doors (isObstacle), walls (isObstacle), boulders, return false, not moveable
+		// otherwise return true
+		// if entitiy == wall 
+		for (Entity e : entities) {
+			if (e.isObstacle(dungeon, e) == true) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public void move(Direction d) {
+		// move the boulder one unit in the direction specified
+		System.out.println("ATTEMPTING TO MOVE BOULDER");
+		System.out.println("DIRECTION IS" + d);
+		this.updateCoord(d);
+	}
+	
+	// TODO: possibly abstract this out into an interface??
+	public void updateCoord(Direction d) {
+		switch(d) {
+		case UP: 
+			y().set(this.getY()-1);
+			break;
+		case DOWN: 
+			y().set(this.getY()+1);
+			break;
+		case LEFT:
+			x().set(this.getX()-1);
+			break;
+		case RIGHT:
+			x().set(this.getX()+1);
+			break;
+		}
+			
+	}
+}

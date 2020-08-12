@@ -1,0 +1,22 @@
+list
+- will print out lines of code 
+
+break
+- can either create breakpoint before functions or specific line-numbers
+- break 7 - creates breakpoint at line 7
+- run - runs program until just before line is executed
+
+info locals
+- prints out current values for variables
+
+next command
+- steps one line at a time
+
+continue
+- program continues until end or the start of the program
+
+info break
+- prints out list of all breakpoints
+
+delete breakpoint
+- d #num - deletes numth breakpoint

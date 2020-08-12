@@ -1,0 +1,39 @@
+package unsw.dungeon;
+
+public interface ItemState {
+	// public void remove(Dungeon dungeon); // removes item from Inventory & dungeon
+	public void use(Player player, Dungeon dungeon);
+	public void activate(Player player, Dungeon dungeon);
+	public void collect(Dungeon dungeon, Player player);
+}
+
+// active state - item is active, able to be used
+// once an item becomes active (from the inventory state), they are removed from the inventory, bombs also need to be dropped down on the square the player is on (TODO)
+// active items are not able to be activated or collected
+// active items can be used
+// once an item has been fully used, it transitions to the used state
+
+// board state - item is on board and NOT active
+// board items can be collected (moved from board to inventory) and removed (from the dungeon if applicable)
+// board items cannot be used, or activated
+
+// used state - item has been used
+// once an item becomes used (from an active state), it is removed from the dungeon (if applicable, like bombs which are placed onto the board once being activated)
+// used items cannot be collected, cannot be used, cannot be activated
+
+// inventory state - item is in inventory and NOT active
+// inventory items are able to be activated - once an item becomes active from the inventory state, they are removed from the inventory (bombs also need to be dropped down onto the square the player is on)
+// TODO: bomb dropping
+// inventory items are not able to be used or collected
+
+// STATE TRANSITIONS
+// board -> inventory 
+// if a player collects an item that is a board item, it is removed from the board (removed from board), added to the inventory, and transitions to the inventory state
+// inventory -> active
+// if a player activates an item in the inventory, this reduces the count of the item by 1 in the inventory (removed from inventory), and transitions to the active state
+// active -> used
+// while active, an item is able to be used
+// once an item is no longer able to be used, it is removed from the board (if applicable like bombs)
+
+// maybe have a list of active items in the dungeon - use those items at each turn??
+

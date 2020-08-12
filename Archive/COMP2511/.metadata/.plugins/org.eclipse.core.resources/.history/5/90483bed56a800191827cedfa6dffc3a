@@ -1,0 +1,10 @@
+package unsw.dungeon;
+
+public class Potion extends Item {
+
+	public Potion(int x, int y) {
+		super(x, y);
+		setUseBehaviour(new UseUnuseable()); //TODO: change
+		setCollectBehaviour(new CollectCollectibleItem(this));
+	}
+}

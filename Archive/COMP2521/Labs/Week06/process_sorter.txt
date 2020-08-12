@@ -1,0 +1,10 @@
+process: 
+ran gdb - seg fault at line 39
+insert breaks before the for loops & after the first for loop - just to check that the values were properly initialised & n was the correct value. This was fine
+inserted breaks before and after the second for loop just to check j was being properly initialied
+removed these breaks
+inserted breaks immediately at line 41 (after the incrementation updates) 
+noticed that j was incrementing beyond n
+printed out array at these indexes - confirmed that these values were not initialised
+changed j++ to j--
+

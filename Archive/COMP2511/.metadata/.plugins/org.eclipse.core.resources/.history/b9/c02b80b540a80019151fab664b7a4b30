@@ -1,0 +1,41 @@
+package unsw.dungeon;
+
+abstract class Item extends Entity {
+	
+	private ItemState itemState; 
+	
+	public Item(int x, int y) { //TODO: add implementation/methods/states
+        super(x, y);
+    }
+	
+	
+	
+	public ItemState getItemState() {
+		return itemState;
+	}
+
+
+
+	public void setItemState(ItemState itemState) {
+		this.itemState = itemState;
+	}
+	
+	public void setActiveState() {
+		this.setItemState(new ItemActiveState(this));
+		
+	}
+
+	public void setBoardState() {
+		this.setItemState(new ItemBoardState(this));
+		
+	}
+	
+	public void setInventoryState() {
+		this.setItemState(new ItemInventoryState(this));
+		
+	}
+
+
+	public Item() {}
+
+}

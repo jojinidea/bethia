@@ -1,0 +1,25 @@
+package unsw.dungeon;
+
+public interface ItemState {
+	public void remove(Dungeon dungeon); // removes item from Inventory & dungeon
+	public void use(Player player, Dungeon dungeon);
+	public void activate(Player player, Dungeon dungeon);
+	public void collect(Dungeon dungeon, Player player);
+}
+
+// active state - item is active, able to be used
+// once an item becomes active (from the inventory state), they are removed from the inventory, 
+// active items are not able to be activated or collected
+// active items can be used
+// once an item has been fully used, it transitions to the used state
+
+// board state - item is on board and NOT active
+// board items can be collected (moved from board to inventory) and removed (from the dungeon if applicable)
+// board items cannot be used, or activated
+
+// used state - item has been used
+// used items are able to be removed (removed from inventory and dungeon)
+// they are not able to be used, activated or collected
+
+// inventory state - item is in inventory and NOT active
+// inventory items are able to be removed (from the inventory)

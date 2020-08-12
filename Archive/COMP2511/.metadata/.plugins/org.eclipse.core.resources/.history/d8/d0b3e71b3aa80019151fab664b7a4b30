@@ -1,0 +1,9 @@
+package unsw.dungeon;
+
+public interface ItemState {
+	public void remove(Dungeon dungeon); // removes item from Inventory & dungeon
+	public void use(Player player, Dungeon dungeon);
+	public void activate(Player player, Dungeon dungeon);
+	public void collect(Dungeon dungeon, Player player);
+	
+}

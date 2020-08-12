@@ -1,0 +1,16 @@
+package unsw.dungeon;
+
+abstract class Item extends Entity {
+	
+	private boolean isActive;
+	private ItemState itemState; 
+	
+	public Item(int x, int y) { //TODO: add implementation/methods/states
+        super(x, y);
+    }
+	
+	
+	
+	public Item() {}
+
+}

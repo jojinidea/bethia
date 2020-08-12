@@ -1,0 +1,47 @@
+package unsw.dungeon;
+
+import java.util.ArrayList;
+
+public class BoulderObstacle implements ObstacleBehaviour {
+	
+	private Boulder boulder;
+	
+	public BoulderObstacle(Boulder boulder) {
+		setBoulder(boulder);
+	}
+
+	@Override
+	public boolean isObstacle(Dungeon dungeon, Entity entity) {
+		// TODO Auto-generated method stub
+		// boulders are always obstacles for enemies
+		// boulders are obstacles for players if the player cannot push them
+			// that means that the boulder is directly next to one of the following objects: boulder, wall, unopened door
+			// pass in isObstacle a boulder.isObstacle()
+		
+		if (entity.equals(dungeon.getPlayer()) == true) {
+			Player player = (Player) entity;
+			Direction direction = player.getDirection(); // gets player's attempted movement direction
+			if (this.getBoulder().moveable(direction, dungeon) == true) { // maybe get rid of newCoord??
+				System.out.println("BOULDER IS MOVEABLE");
+				return false; 
+			} else {
+				return true;
+			}
+		} else {
+			// means entity is a boulder/enemy, boulders are always obstacles for other boulders/enemies
+			return true;
+		}
+
+	}
+
+	public Boulder getBoulder() {
+		return boulder;
+	}
+
+	public void setBoulder(Boulder boulder) {
+		this.boulder = boulder;
+	}
+	
+	
+	}
+

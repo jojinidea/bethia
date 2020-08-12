@@ -1,0 +1,175 @@
+package unsw.dungeon;
+
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+
+
+/**
+ * The player entity
+ * @author Robert Clifton-Everest
+ *
+ */
+public class Player extends Entity {
+
+    private Dungeon dungeon;
+    private Inventory inventory;
+    private Direction direction;
+    private Item equippedItem; // TODO: notify enemy if item has been equipped 
+
+    /**
+     * Create a player positioned in square (x,y)
+     * @param x
+     * @param y
+     */
+    public Player(Dungeon dungeon, int x, int y) {
+        super(x, y);
+        this.dungeon = dungeon;
+        inventory = new Inventory(); // TODO: need an add item to inventory feature in inventory
+        setCollectBehaviour(new CollectNonCollectible());
+    }
+    
+    public Direction findDirection (Point newCoord) {
+    	// returns direction player is moving in - left, right, down, up
+    	if (newCoord.getX() == this.getX() + 1) {
+    		System.out.println("RETURNING RIGHT");
+    		return Direction.RIGHT;
+    	} else if (newCoord.getX() == this.getX() - 1) {
+    		System.out.println("RETURNING LEFT");
+    		return Direction.LEFT; 
+    	} else if (newCoord.getY() == this.getY() + 1) {
+    		System.out.println("RETURNING DOWN");
+    		return Direction.DOWN;
+    	} else {
+    		System.out.println("RETURNING UP");
+    		return Direction.UP;
+    	}
+   }
+    
+    
+    public Point nextMove(KeyCode code) {
+    	// gets the player's intended coordinate they want to move into
+    	Point newCoordinate = null;
+    	//System.out.println("Old Y coord is " + oldYCoord + " old X coord is " + oldXCoord);
+    	switch (code) {
+    	case UP:
+            newCoordinate = new Point(this.getX(), this.getY()-1);
+            break;
+        case DOWN:
+            newCoordinate = new Point(this.getX(), this.getY()+1);
+            System.out.println("NEW COORD UPDATE + " + newCoordinate);
+            break;
+        case LEFT:
+        	newCoordinate = new Point(this.getX()-1, this.getY());
+            break;
+        case RIGHT:
+        	newCoordinate = new Point(this.getX()+1, this.getY());
+            break;
+		default:
+			break;
+    	}
+    //System.out.println("RETURNING NEW COORDINATE " + newCoordinate);
+    return newCoordinate;
+    }
+    
+    public void move(KeyCode code) {
+    	// makes the move
+    	Point newCoordinate = nextMove(code);
+    	//System.out.println("NEW COORDINATE IS " + newCoordinate);
+    	Direction direction = this.findDirection(newCoordinate);
+    	this.setDirection(direction); // sets player's direction of attempted movement
+    	if (dungeon.validMove(this, newCoordinate) == true) { // TODO: if the item is a collectible item, call add item to inventory
+    		System.out.println("MOVE IS VALID AND NEXT COORDINATE IS " + newCoordinate);
+    		y().set(newCoordinate.getY());
+    		x().set(newCoordinate.getX());
+    		//for (Entity e : dungeon.search(newCoordinate)) {
+    		//	e.collect(dungeon, this);
+    		//}
+    		if (this.getEquippedItem() != null) { // uses item if equipped
+    			this.getEquippedItem().use(dungeon, this);
+    		}
+    		this.useItem(newCoordinate); // for the boulder
+    	}
+    }
+    
+    public void activateItem(KeyCode code) {
+    	// checks if there is one of that item in the inventory
+    	// if yes, activates it
+    	
+    }
+    
+    public boolean hasItem(KeyCode code) {
+    	// check if the player has at least one of the item given, returns true if yes, false if no
+    	switch(code) {
+    	case DIGIT1: 
+    		return this.getInventory().haveItem(1);
+    		break;
+    	case DIGIT2:
+    		return this.getInventory().haveItem(2);
+    		break;
+    	case DIGIT3:
+    		return this.getInventory().haveItem(3);
+    		break;
+    	}
+    	
+    	return false; 
+    }
+    
+    
+    
+    public Item getEquippedItem() {
+		return equippedItem;
+	}
+
+	public void setEquippedItem(Item equippedItem) {
+		this.equippedItem = equippedItem;
+	}
+
+	// MAYBE CHANGE SO THAT ITEMS ARE INSTANTANEOUSLY USED?? 
+	// the method below moves boulders but it would also use potions, bombs etc.
+    public void useItem(Point coordinate) {
+    	// uses items in the player's coordinate
+    	for (Entity e : dungeon.search(coordinate)) {
+    		e.use(dungeon, this);
+    	}
+    }
+    
+    public boolean hasCorrespondingKey(int ID) {
+    	if (this.getInventory().findCorrespondingKey(ID) == true) {
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }
+    
+    public void equipItem(Item item) {
+    	this.equippedItem = item;
+    }
+
+
+	public Inventory getInventory() {
+		return inventory;
+	}
+
+
+	public void setInventory(Inventory inventory) {
+		this.inventory = inventory;
+	}
+
+	public Direction getDirection() {
+		return this.direction;
+	}
+
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
+	
+	public void addToInventory(Item item) {
+		this.getInventory().addToInventory(item);
+	}
+    
+	public void removeFromInventory(Item item) {
+		this.getInventory().removeFromInventory(item);
+	}
+    
+    
+}

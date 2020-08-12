@@ -1,0 +1,36 @@
+package unsw.dungeon;
+
+public class ItemInventoryState implements ItemState {
+	
+	// inventory state - item is in inventory and NOT active
+	// inventory items are able to be activated - once an item becomes active from the inventory state, they are removed from the inventory (bombs also need to be dropped down onto the square the player is on)
+	// inventory items are not able to be used or collected
+
+	private Item item;
+	
+	public ItemInventoryState(Item item) {
+		this.item = item;
+	}
+	
+	@Override
+	public void use(Player player, Dungeon dungeon) {
+		// Inventory items cannot be used directly - they must first be activated
+		
+	}
+
+	@Override
+	public void activate(Player player, Dungeon dungeon) {
+		// inventory items can be activated
+		
+		
+	}
+
+	@Override
+	public void collect(Dungeon dungeon, Player player) {
+		// Inventory items cannot be collected
+		
+	}
+	
+	
+
+}

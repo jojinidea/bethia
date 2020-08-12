@@ -1,0 +1,67 @@
+{"status":"rejected"}
+{"venue":"V1","rooms":["A","C"],"status":"success"}
+{"status":"rejected"}
+{"status":"rejected"}
+{"venue":"V2","rooms":["D","E"],"status":"success"}
+{"venue":"V1","rooms":["B"],"status":"success"}
+{"status":"rejected"}
+{"venue":"V3","rooms":["F"],"status":"success"}
+{"status":"rejected"}
+{"status":"success"}
+{"status":"rejected"}
+{"venue":"V1","rooms":["A"],"status":"success"}
+{"venue":"V1","rooms":["C"],"status":"success"}
+{"venue":"V4","rooms":["G"],"status":"success"}
+[
+  {
+    "reservations": [{
+      "start": "2010-10-12",
+      "end": "2010-10-16",
+      "id": "E6"
+    }],
+    "room": "A"
+  },
+  {
+    "reservations": [{
+      "start": "2010-10-10",
+      "end": "2010-10-15",
+      "id": "E3"
+    }],
+    "room": "B"
+  },
+  {
+    "reservations": [{
+      "start": "2010-10-12",
+      "end": "2010-10-16",
+      "id": "E7"
+    }],
+    "room": "C"
+  }
+]
+[
+  {
+    "reservations": [{
+      "start": "2010-10-10",
+      "end": "2010-10-15",
+      "id": "E2"
+    }],
+    "room": "D"
+  },
+  {
+    "reservations": [{
+      "start": "2010-10-10",
+      "end": "2010-10-15",
+      "id": "E2"
+    }],
+    "room": "E"
+  }
+]
+[{
+  "reservations": [{
+    "start": "2010-10-10",
+    "end": "2010-10-15",
+    "id": "E4"
+  }],
+  "room": "F"
+}]
+

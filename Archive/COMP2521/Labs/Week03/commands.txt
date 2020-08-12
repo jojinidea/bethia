@@ -1,0 +1,12 @@
+./myed commands.txt
+%
+.
+i
+new first line
+%
+n
+n
+n
+-2
+q
+ls

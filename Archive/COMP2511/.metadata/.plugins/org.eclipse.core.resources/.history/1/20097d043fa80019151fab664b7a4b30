@@ -1,0 +1,103 @@
+package unsw.dungeon;
+
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+
+/**
+ * An entity in the dungeon.
+ * @author Robert Clifton-Everest
+ *
+ */
+public class Entity {
+
+    // IntegerProperty is used so that changes to the entities position can be
+    // externally observed.
+    private IntegerProperty x, y;
+    private ObstacleBehaviour obstacleBehaviour;
+    private UseBehaviour useBehaviour;
+    private RemoveBehaviour removeBehaviour; // not sure
+    private CollectBehaviour collectBehaviour; // not sure
+    
+    // ASK TUTOR: BAD DESIGN?
+
+
+    /**
+     * Create an entity positioned in square (x,y)
+     * @param x
+     * @param y
+     */
+    
+    public Entity(int x, int y) {
+        this.x = new SimpleIntegerProperty(x);
+        this.y = new SimpleIntegerProperty(y);
+    }
+    
+    public Entity() {} 
+    
+    // TODO: potentially move into constructor?? DOUBLE CHECK
+    public void setObstacleBehaviour (ObstacleBehaviour obstacleBehaviour) {
+		this.obstacleBehaviour = obstacleBehaviour;
+	}
+    
+    public UseBehaviour getUseBehaviour () {
+    	return this.useBehaviour;
+    }
+    
+	public void setUseBehaviour (UseBehaviour useBehaviour) {
+		this.useBehaviour = useBehaviour;
+	}
+	
+	public void setRemoveBehaviour (RemoveBehaviour removeBehaviour) {
+		this.removeBehaviour = removeBehaviour;
+	}
+	
+	public RemoveBehaviour getRemoveBehaviour() {
+		return this.removeBehaviour;
+	}
+	
+    public boolean isObstacle(Dungeon dungeon, Entity entity) {
+    	return obstacleBehaviour.isObstacle(dungeon, entity);
+    }
+    
+    public void use(Dungeon dungeon, Player player) {
+    	this.getUseBehaviour().use(player, dungeon);
+    }
+    
+    public void removeEnemy(Dungeon dungeon) {
+    	this.getRemoveBehaviour().removeEnemy(dungeon);
+    }
+   
+    public IntegerProperty x() {
+        return x;
+    }
+
+    public IntegerProperty y() {
+        return y;
+    }
+
+    public int getY() {
+        return y().get();
+    }
+
+    public int getX() {
+        return x().get();
+    }
+    
+    public Point getCoordinate() {
+    	return new Point(this.getX(), this.getY());
+    }
+
+	public CollectBehaviour getCollectBehaviour() {
+		return collectBehaviour;
+	}
+
+	public void setCollectBehaviour(CollectBehaviour collectBehaviour) {
+		this.collectBehaviour = collectBehaviour;
+	}
+	
+	public void collect(Dungeon dungeon, Player player) {
+		this.getCollectBehaviour().collectItem(dungeon, player);
+	}
+
+    
+}

@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "set.h"
+
+Set createURLs(char *URL);
+Set createText(char *text);
+
+int main (void) {
+    FILE *file = fopen("url11.txt", "r");
+    char string[1000];
+    char *text = string;
+    char *text1 = string;
+    char *prev = string; 
+    char *curr = string;
+    int endSection1 = 0;
+
+   
+    while (fscanf(file, "%s", text1) != EOF) {
+        char *strdup = malloc(strlen(text1) + 1);
+        strcpy(strdup, text);
+        curr = text1; 
+        //printf("curr is %s\n", curr);
+        if (endSection1 == 0) {
+            createURLs(curr);
+        } else {
+            createText(curr);
+        }
+        printf("curr is %s and prev is %s\n", curr, prev);
+        if (strcmp(prev, "#end") == 0 && strcmp(curr, "Section-1") == 0) {
+            endSection1 = 1;
+            printf("END SECTION 1 FOUND!");
+        }
+        prev = text;
+        //printf("prev is %s\n", prev);
+    }
+ 
+
+return 0;
+
+}
+
+
+
+Set createURLs(char *URL) {
+    Set URLSet = newSet();
+    insertInto(URLSet, URL);
+    
+    return URLSet;
+}
+
+Set createText(char *text) {
+    Set textSet = newSet();
+    insertInto(textSet, text);
+    
+    return textSet;
+    
+}
+
+
+
+
+

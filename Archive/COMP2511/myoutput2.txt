@@ -1,0 +1,260 @@
+{"status": "rejected"}
+{
+  "venue": "Grand Plateau",
+  "rooms": [
+    "Contest Hall",
+    "Training Field"
+  ],
+  "status": "success"
+}
+{
+  "venue": "Littleleaf Town Gym",
+  "rooms": ["Battle Field"],
+  "status": "success"
+}
+{"status": "rejected"}
+{
+  "venue": "Grand Plateau",
+  "rooms": [
+    "Contest Hall",
+    "Training Field"
+  ],
+  "status": "success"
+}
+{
+  "venue": "Grand Plateau",
+  "rooms": [
+    "Contest Hall",
+    "Training Field",
+    "Stadium"
+  ],
+  "status": "success"
+}
+{"status": "rejected"}
+{
+  "venue": "Battle Frontier",
+  "rooms": [
+    "Battle Factory",
+    "Battle Palace",
+    "Battle Pike"
+  ],
+  "status": "success"
+}
+{"status": "rejected"}
+[{
+  "reservations": [{
+    "start": "2019-01-01",
+    "end": "2019-01-03",
+    "id": "Rival Battle"
+  }],
+  "room": "Battle Field"
+}]
+[
+  {
+    "reservations": [
+      {
+        "start": "2019-01-01",
+        "end": "2019-01-03",
+        "id": "Mid Season Tournament"
+      },
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-03",
+        "id": "Practice Battles"
+      }
+    ],
+    "room": "Contest Hall"
+  },
+  {
+    "reservations": [
+      {
+        "start": "2019-01-01",
+        "end": "2019-01-03",
+        "id": "Mid Season Tournament"
+      },
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-03",
+        "id": "Practice Battles"
+      }
+    ],
+    "room": "Training Field"
+  },
+  {
+    "reservations": [{
+      "start": "2019-01-01",
+      "end": "2019-01-03",
+      "id": "Mid Season Tournament"
+    }],
+    "room": "Stadium"
+  }
+]
+[
+  {
+    "reservations": [],
+    "room": "Battle Tower"
+  },
+  {
+    "reservations": [],
+    "room": "Battle Pyramid"
+  },
+  {
+    "reservations": [{
+      "start": "2019-01-01",
+      "end": "2019-01-03",
+      "id": "Battle Tycoon Festival"
+    }],
+    "room": "Battle Factory"
+  },
+  {
+    "reservations": [{
+      "start": "2019-01-01",
+      "end": "2019-01-03",
+      "id": "Battle Tycoon Festival"
+    }],
+    "room": "Battle Palace"
+  },
+  {
+    "reservations": [{
+      "start": "2019-01-01",
+      "end": "2019-01-03",
+      "id": "Battle Tycoon Festival"
+    }],
+    "room": "Battle Pike"
+  }
+]
+{"status": "success"}
+{
+  "venue": "Battle Frontier",
+  "rooms": [
+    "Battle Factory",
+    "Battle Palace",
+    "Battle Pike"
+  ],
+  "status": "success"
+}
+{"status": "rejected"}
+{
+  "venue": "Grand Plateau",
+  "rooms": ["Training Field"],
+  "status": "success"
+}
+{
+  "venue": "Battle Frontier",
+  "rooms": [
+    "Battle Factory",
+    "Battle Palace"
+  ],
+  "status": "success"
+}
+{
+  "venue": "Battle Frontier",
+  "rooms": [
+    "Battle Factory",
+    "Battle Palace",
+    "Battle Pike"
+  ],
+  "status": "success"
+}
+{"status": "rejected"}
+{
+  "venue": "Grand Plateau",
+  "rooms": ["Contest Hall"],
+  "status": "success"
+}
+{"status": "rejected"}
+{"status": "rejected"}
+{"status": "rejected"}
+[{
+  "reservations": [{
+    "start": "2019-01-01",
+    "end": "2019-01-03",
+    "id": "Rival Battle"
+  }],
+  "room": "Battle Field"
+}]
+[
+  {
+    "reservations": [
+      {
+        "start": "2019-01-02",
+        "end": "2019-01-02",
+        "id": "Pokemon Contest"
+      },
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-03",
+        "id": "Practice Battles"
+      }
+    ],
+    "room": "Contest Hall"
+  },
+  {
+    "reservations": [
+      {
+        "start": "2019-01-03",
+        "end": "2019-01-05",
+        "id": "Challenger"
+      },
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-03",
+        "id": "Practice Battles"
+      }
+    ],
+    "room": "Training Field"
+  },
+  {
+    "reservations": [],
+    "room": "Stadium"
+  }
+]
+[
+  {
+    "reservations": [],
+    "room": "Battle Tower"
+  },
+  {
+    "reservations": [],
+    "room": "Battle Pyramid"
+  },
+  {
+    "reservations": [
+      {
+        "start": "2018-12-15",
+        "end": "2019-01-05",
+        "id": "Mid Season Tournament"
+      },
+      {
+        "start": "2019-01-10",
+        "end": "2019-01-11",
+        "id": "Legendary Encounter"
+      }
+    ],
+    "room": "Battle Factory"
+  },
+  {
+    "reservations": [
+      {
+        "start": "2018-12-15",
+        "end": "2019-01-05",
+        "id": "Mid Season Tournament"
+      },
+      {
+        "start": "2019-01-10",
+        "end": "2019-01-11",
+        "id": "Legendary Encounter"
+      }
+    ],
+    "room": "Battle Palace"
+  },
+  {
+    "reservations": [{
+      "start": "2018-12-15",
+      "end": "2019-01-05",
+      "id": "Mid Season Tournament"
+    }],
+    "room": "Battle Pike"
+  }
+]
+

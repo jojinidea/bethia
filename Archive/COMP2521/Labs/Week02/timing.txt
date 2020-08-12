@@ -1,0 +1,34 @@
+Input	Initial	Has	Number	AvgTime	AvgTime
+Size	Order	Dups	of runs	forusel	forsort
+5000	random	no	5	0m0.108  0m0.0080
+5000	sorted	no	5	0m0.092	 0m0.0080
+5000	reverse	no	5	0m0.0072 0m0.0048
+5000	random	yes	5	0m0.104	 0m0.0104
+5000	sorted	yes	5	0m0.103	 0m0.004
+5000	reverse	yes	5	0m0.088  0m0.0024
+10000	random	no	5	0m0.336	 0m0.02
+10000	sorted	no	5	0m0.25	 0m0.0064
+10000	reverse	no	5	0m0.012	 0m0.0096
+10000	random	yes	5	0m0.332	 0m0.02
+10000	sorted	yes	5	0m0.248	 0m0.0104
+10000	reverse	yes	5	0m0.012	 0m0.012
+20000   random  no  5   0m1.485  0m0.04
+20000   sorted  no  5   0m0.829  0m0.022
+20000   reverse no  5   0m0.021  0m0.016
+20000   random  yes 5   0m1.53   0m0.035
+20000   sorted  yes 5   0m0.821  0m0.015
+20000   reverse yes 5   0m0.021  0m0.018
+100000  random  no  1   1m29.320 0m0.152
+100000  sorted  no  2   0m18.24  0m0.084
+100000  reverse no  2   0m0.094  0m0.076
+100000  random  yes 1   1m33.14  0m0.156
+100000  sorted  yes 2   0m20.04  0m0.104
+100000  reverse yes 2   0m0.078  0m0.09
+
+Reverse-sorted input has the smallest increase in average run time with an increase in input size. This is because finding the new element's position in the sorted list has a constant time-complexity (i.e. because the new element will always be smaller than the first element in the list, we only need to compare the new element with the first element in the list to determine the new element's position). The run-time still depends on input size though, as for each item of the input, we need to modify pointers (O(n))
+
+Sorted input (in increasing order) has the second smallest increase in average run time with increasing input size. To find each new element's position, we must traverse all items in the list for EACH new element O(n^2). Then we add new elements to the end of the list (time complexity O(n)) - O(n^2) + O(n).
+
+Random input has the largest increase in average run time with increasing input size. To find the position of each new element, the worse-case scenario is that we will need to go through all items of the list for each new element O(n^2). Then, instead of adding the elements to the end/start of the list, we have to go through the list again for each element until we reach the appropriate position for each element, before we modify pointers (time complexity O(n^2)
+
+

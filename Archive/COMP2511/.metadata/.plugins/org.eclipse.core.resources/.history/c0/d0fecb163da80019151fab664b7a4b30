@@ -1,0 +1,39 @@
+package unsw.dungeon;
+
+public class ItemActiveState implements ItemState {
+	
+	// active state - item is active, able to be used
+	// once an item becomes active (from the inventory state), they are removed from the inventory, bombs also need to be dropped down on the square the player is on (TODO)
+	// active items are not able to be activated or collected
+	// active items can be used
+	// once an item has been fully used, it transitions to the used state
+	
+	private Item item;
+	
+	public ItemActiveState(Item item) {
+		this.item = movie;
+	}
+
+	
+	
+	@Override
+	public void use(Player player, Dungeon dungeon) {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+	@Override
+	public void activate(Player player, Dungeon dungeon) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void collect(Dungeon dungeon, Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

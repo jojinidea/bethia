@@ -1,0 +1,188 @@
+{
+  "venue": "Palace",
+  "rooms": ["Conference Room 1"],
+  "status": "success"
+}
+{"status": "rejected"}
+{
+  "venue": "Palace",
+  "rooms": [
+    "Conference Room 2",
+    "Courtyard",
+    "Grand Ball Room"
+  ],
+  "status": "success"
+}
+{"status": "rejected"}
+{
+  "venue": "Palace",
+  "rooms": [
+    "Conference Room 1",
+    "Courtyard",
+    "Grand Ball Room"
+  ],
+  "status": "success"
+}
+{
+  "venue": "Palace",
+  "rooms": ["Conference Room 2"],
+  "status": "success"
+}
+{"status": "rejected"}
+[
+  {
+    "reservations": [
+      {
+        "start": "2019-01-01",
+        "end": "2019-01-03",
+        "id": "Press Conference"
+      },
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-03",
+        "id": "Staff Hangout"
+      }
+    ],
+    "room": "Conference Room 1"
+  },
+  {
+    "reservations": [{
+      "start": "2019-01-01",
+      "end": "2019-01-03",
+      "id": "Staff Strike"
+    }],
+    "room": "Conference Room 2"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "Staff Hangout"
+    }],
+    "room": "Courtyard"
+  },
+  {
+    "reservations": [],
+    "room": "Gardens"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "Staff Hangout"
+    }],
+    "room": "Grand Ball Room"
+  },
+  {
+    "reservations": [],
+    "room": "Banquet Hall"
+  }
+]
+{"status": "success"}
+{
+  "venue": "Palace",
+  "rooms": [
+    "Grand Ball Room",
+    "Banquet Hall"
+  ],
+  "status": "success"
+}
+{"status": "rejected"}
+{
+  "venue": "Palace",
+  "rooms": [
+    "Courtyard",
+    "Gardens"
+  ],
+  "status": "success"
+}
+{"status": "rejected"}
+{
+  "venue": "Palace",
+  "rooms": ["Conference Room 2"],
+  "status": "success"
+}
+{
+  "venue": "Palace",
+  "rooms": ["Conference Room 1"],
+  "status": "success"
+}
+{
+  "venue": "Palace",
+  "rooms": ["Conference Room 1"],
+  "status": "success"
+}
+{"status": "rejected"}
+{
+  "venue": "Palace",
+  "rooms": ["Conference Room 2"],
+  "status": "success"
+}
+{"status": "rejected"}
+{"status": "rejected"}
+{"status": "rejected"}
+[
+  {
+    "reservations": [
+      {
+        "start": "2019-01-01",
+        "end": "2019-01-03",
+        "id": "Press Conference"
+      },
+      {
+        "start": "2019-01-04",
+        "end": "2019-01-15",
+        "id": "Cyborg Celebration"
+      }
+    ],
+    "room": "Conference Room 1"
+  },
+  {
+    "reservations": [
+      {
+        "start": "2019-01-02",
+        "end": "2019-01-02",
+        "id": "Rose Day"
+      },
+      {
+        "start": "2019-01-03",
+        "end": "2019-01-05",
+        "id": "World Leaders Conference"
+      }
+    ],
+    "room": "Conference Room 2"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "Staff Strike"
+    }],
+    "room": "Courtyard"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "Staff Strike"
+    }],
+    "room": "Gardens"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "Annual Spring Ball"
+    }],
+    "room": "Grand Ball Room"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "Annual Spring Ball"
+    }],
+    "room": "Banquet Hall"
+  }
+]
+

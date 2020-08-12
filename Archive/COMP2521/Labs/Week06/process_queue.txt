@@ -1,0 +1,12 @@
+test 2 failed due to the assertion QueueLength(q1) == i failing 
+inserted break right after enterQueue commands - checked length of both queues (were both 0) 
+indicated that something was wrong with queuelength or, enterQueue wasn't working properly
+queuelength returned q->size & enterQueue was not updating this
+enterQueue was also only adding new items when q->head == NULL (so only when the list was empty) 
+modified this, inserted a new break before showQueue as these functions were printing out lots of 0s and 1s
+Looked at showQueue, wasn't updating curr
+test 2 passed
+segmentation fault in leaveQueue line 76
+trying to access q->head->next, which wouldn't work if there was only one element in the list - fixed this, still got a seg fault as program was accessing q->head->item (wouldn't work if the queue had no elements in it)
+test 5 was meant to fail, but was passing and there was a seg fault (seg-faulting as was trying to access q->head->item in a list with no members in it) so added an assertion (q->size > 0)
+

@@ -1,0 +1,39 @@
+Results for Tests on 5000 values
+
+Depth = depth of tree, Cost = average #comparisons per search
+
+
+             Ascending Order        Prefix Order        Random Order    
+Insert
+Method       Depth      Cost     Depth      Cost     Depth      Cost
+
+L            5000       4989.27    13       19.52       28       27.2
+
+A            5000       1887.28    2954     1117.22     28       24.93
+
+R            2942       953.02     1774     677.11      27       25.77
+
+B            204        114.6956   20       24.93       23       21.89
+
+S            4999 (insert) 0.75   3977 (insert) 0.0012   31 (insert) 0.25 
+             33 (search)          33 (search)         1146 (search)
+
+V            13          0.25     14        0.25        15           0.25
+
+
+    Nb = number of comparisons required for building the tree
+    Nb+s = total number of comparisons for both building and searching
+    Nk = number of searches for values in tree
+    Nu = number of searches for values not in tree 
+
+The formula for computing the average number of comparisons is: (Nb+s - Nb) / (Nk + Nu) 
+Ascending - linked list
+Prefix - pretty balanced
+Random - pretty balanced but not as balanced as prefix
+
+A: New values at the root 
+
+
+
+
+

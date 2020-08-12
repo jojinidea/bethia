@@ -1,0 +1,28 @@
+package unsw.dungeon;
+
+public class UseBoulder implements UseBehaviour {
+
+	private Boulder boulder;
+	
+	public UseBoulder(Boulder boulder) {
+		setBoulder(boulder);
+	}
+	
+	@Override
+	public void use(Player player, Dungeon dungeon) {
+		// TODO Auto-generated method stub
+		//System.out.println("PLayer's direction is" + player.getDirection());
+		boulder.move(player.getDirection());
+	}	
+	
+	public boolean isUseable() {
+		
+	}
+
+	public void setBoulder(Boulder boulder) {
+		this.boulder = boulder;
+	}
+
+	
+}
+

@@ -1,0 +1,326 @@
+{"status": "rejected"}
+{
+  "venue": "Westeros",
+  "rooms": ["The Wall"],
+  "status": "success"
+}
+{
+  "venue": "Esos",
+  "rooms": [
+    "Pentos",
+    "Myr",
+    "Braavos",
+    "Volantis",
+    "Dorne",
+    "Dragonstone"
+  ],
+  "status": "success"
+}
+{"status": "rejected"}
+{"status": "success"}
+{
+  "venue": "Westeros",
+  "rooms": [
+    "The Wall",
+    "Horn Hill",
+    "Iron Islands",
+    "Stormsend",
+    "Winterfell",
+    "Kings Landing"
+  ],
+  "status": "success"
+}
+[
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "War of the 5 Kings"
+    }],
+    "room": "The Wall"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "War of the 5 Kings"
+    }],
+    "room": "Horn Hill"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "War of the 5 Kings"
+    }],
+    "room": "Iron Islands"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "War of the 5 Kings"
+    }],
+    "room": "Stormsend"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "War of the 5 Kings"
+    }],
+    "room": "Winterfell"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-03",
+      "id": "War of the 5 Kings"
+    }],
+    "room": "Kings Landing"
+  }
+]
+[
+  {
+    "reservations": [],
+    "room": "Pentos"
+  },
+  {
+    "reservations": [],
+    "room": "Myr"
+  },
+  {
+    "reservations": [],
+    "room": "Braavos"
+  },
+  {
+    "reservations": [],
+    "room": "Volantis"
+  },
+  {
+    "reservations": [],
+    "room": "Dorne"
+  },
+  {
+    "reservations": [],
+    "room": "Dragonstone"
+  }
+]
+{
+  "venue": "Westeros",
+  "rooms": [
+    "The Wall",
+    "Horn Hill",
+    "Iron Islands",
+    "Stormsend",
+    "Winterfell",
+    "Kings Landing"
+  ],
+  "status": "success"
+}
+{
+  "venue": "Esos",
+  "rooms": [
+    "Braavos",
+    "Volantis"
+  ],
+  "status": "success"
+}
+{"status": "rejected"}
+{
+  "venue": "Esos",
+  "rooms": [
+    "Dorne",
+    "Dragonstone"
+  ],
+  "status": "success"
+}
+{
+  "venue": "Esos",
+  "rooms": [
+    "Pentos",
+    "Braavos"
+  ],
+  "status": "success"
+}
+{"status": "rejected"}
+{
+  "venue": "Esos",
+  "rooms": [
+    "Pentos",
+    "Braavos"
+  ],
+  "status": "success"
+}
+{
+  "venue": "Esos",
+  "rooms": [
+    "Pentos",
+    "Myr",
+    "Braavos",
+    "Volantis"
+  ],
+  "status": "success"
+}
+{"status": "rejected"}
+{"status": "rejected"}
+{"status": "rejected"}
+{"status": "rejected"}
+{"status": "rejected"}
+[
+  {
+    "reservations": [
+      {
+        "start": "2019-01-01",
+        "end": "2019-01-03",
+        "id": "War of the 6 Kings"
+      },
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-03",
+        "id": "War of the 5 Kings"
+      }
+    ],
+    "room": "The Wall"
+  },
+  {
+    "reservations": [
+      {
+        "start": "2019-01-01",
+        "end": "2019-01-03",
+        "id": "War of the 6 Kings"
+      },
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-03",
+        "id": "War of the 5 Kings"
+      }
+    ],
+    "room": "Horn Hill"
+  },
+  {
+    "reservations": [
+      {
+        "start": "2019-01-01",
+        "end": "2019-01-03",
+        "id": "War of the 6 Kings"
+      },
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-03",
+        "id": "War of the 5 Kings"
+      }
+    ],
+    "room": "Iron Islands"
+  },
+  {
+    "reservations": [
+      {
+        "start": "2019-01-01",
+        "end": "2019-01-03",
+        "id": "War of the 6 Kings"
+      },
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-03",
+        "id": "War of the 5 Kings"
+      }
+    ],
+    "room": "Stormsend"
+  },
+  {
+    "reservations": [
+      {
+        "start": "2019-01-01",
+        "end": "2019-01-03",
+        "id": "War of the 6 Kings"
+      },
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-03",
+        "id": "War of the 5 Kings"
+      }
+    ],
+    "room": "Winterfell"
+  },
+  {
+    "reservations": [
+      {
+        "start": "2019-01-01",
+        "end": "2019-01-03",
+        "id": "War of the 6 Kings"
+      },
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-03",
+        "id": "War of the 5 Kings"
+      }
+    ],
+    "room": "Kings Landing"
+  }
+]
+[
+  {
+    "reservations": [
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-02",
+        "id": "Recruit Training"
+      },
+      {
+        "start": "2019-02-03",
+        "end": "2019-02-05",
+        "id": "Purple Wedding"
+      }
+    ],
+    "room": "Pentos"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-02",
+      "id": "Recruit Training"
+    }],
+    "room": "Myr"
+  },
+  {
+    "reservations": [
+      {
+        "start": "2019-02-01",
+        "end": "2019-02-02",
+        "id": "Recruit Training"
+      },
+      {
+        "start": "2019-02-03",
+        "end": "2019-02-05",
+        "id": "Purple Wedding"
+      }
+    ],
+    "room": "Braavos"
+  },
+  {
+    "reservations": [{
+      "start": "2019-02-01",
+      "end": "2019-02-02",
+      "id": "Recruit Training"
+    }],
+    "room": "Volantis"
+  },
+  {
+    "reservations": [{
+      "start": "2019-01-01",
+      "end": "2019-01-03",
+      "id": "Red Wedding"
+    }],
+    "room": "Dorne"
+  },
+  {
+    "reservations": [{
+      "start": "2019-01-01",
+      "end": "2019-01-03",
+      "id": "Red Wedding"
+    }],
+    "room": "Dragonstone"
+  }
+]
+

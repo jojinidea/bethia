@@ -1,0 +1,69 @@
+package unsw.dungeon;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javafx.fxml.FXML;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.GridPane;
+
+/**
+ * A JavaFX controller for the dungeon.
+ * @author Robert Clifton-Everest
+ *
+ */
+public class DungeonController {
+
+    @FXML
+    private GridPane squares;
+
+    private List<ImageView> initialEntities;
+
+    private Player player;
+
+    private Dungeon dungeon;
+
+    public DungeonController(Dungeon dungeon, List<ImageView> initialEntities) {
+        this.dungeon = dungeon;
+        this.player = dungeon.getPlayer();
+        this.initialEntities = new ArrayList<>(initialEntities);
+    }
+
+    @FXML
+    public void initialize() {
+        Image ground = new Image("/dirt_0_new.png");
+
+        // Add the ground first so it is below all other entities
+        for (int x = 0; x < dungeon.getWidth(); x++) {
+            for (int y = 0; y < dungeon.getHeight(); y++) {
+                squares.add(new ImageView(ground), x, y);
+            }
+        }
+
+        for (ImageView entity : initialEntities)
+            squares.getChildren().add(entity);
+    }
+
+    @FXML
+    public void handleKeyPress(KeyEvent event) {
+    	if (event.getCode() == KeyCode.DOWN || event.getCode() == KeyCode.UP 
+    	|| event.getCode() == KeyCode.LEFT || event.getCode() == KeyCode.RIGHT) {
+    		System.out.println("HI");
+    		player.move(event);
+    	}
+    	// if the player presses the key 1 -> activate potion if the player has at least 1 potion
+    	// if player presses key 2 -> activate bomb if player has at least 1 bomb
+    	// if player presses key 3 -> activate sword
+    	
+
+
+    	 // Once a player has activated a particular item, the item will be able to be used. 
+    	 // The amount of that particular type of item should be decremented once it has been activated.
+    	
+    }
+
+}
+

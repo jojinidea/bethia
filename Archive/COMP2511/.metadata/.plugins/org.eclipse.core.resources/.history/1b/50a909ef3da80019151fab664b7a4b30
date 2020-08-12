@@ -1,0 +1,9 @@
+package unsw.dungeon;
+
+public class UseUnuseable implements UseBehaviour {
+	
+	public boolean use(Player player, Dungeon d) {
+		false;
+	}
+
+}

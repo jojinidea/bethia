@@ -1,0 +1,16 @@
+package unsw.dungeon;
+
+public class Enemy extends Entity {
+	
+	public Enemy(int x, int y) {
+		super(x,y);
+		setUseBehaviour(new UseUnuseable()); //TODO: does this make sense??, need obstacle behaviour
+		setRemoveBehaviour(new RemoveEnemy(this));
+		setCollectBehaviour(new CollectNonCollectible());
+	}
+	
+	public move(Direction direction, Dungeon dungeon) {
+		
+	}
+
+}

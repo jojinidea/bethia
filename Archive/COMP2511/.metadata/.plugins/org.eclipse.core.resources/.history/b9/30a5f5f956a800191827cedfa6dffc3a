@@ -1,0 +1,30 @@
+package unsw.dungeon;
+
+public class Sword extends Item {
+	
+	private int hitsRemaining;
+	
+	public Sword(int x, int y) {
+		super(x, y);
+		hitsRemaining = 5;
+		setUseBehaviour(new UseSword(this)); // TODO
+		setCollectBehaviour(new CollectCollectibleItem(this));
+	}
+	
+	
+	
+	public int getHitsRemaining() {
+		return hitsRemaining;
+	}
+
+
+
+	public void setHitsRemaining(int hitsRemaining) {
+		this.hitsRemaining = hitsRemaining;
+	}
+
+	public void decrementHits() {
+		this.setHitsRemaining(this.getHitsRemaining()-1);
+	}
+	
+}

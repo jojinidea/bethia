@@ -1,0 +1,142 @@
+package tests;
+
+import org.junit.Test;
+
+import javafx.scene.input.KeyCode;
+import unsw.dungeon.*;
+
+import org.junit.Ignore;
+import static org.junit.Assert.assertEquals;
+
+public class US1Tests {
+
+	// test US1.1: player movement
+	// acceptance criteria:
+	// a) a player should move only one adjacent square up/down/left/right per up/down/left/right key they press with the direction of their movement corresponding to the direction of the key they press
+	
+	@Test
+	public void testUS1_1() {	
+		Dungeon dungeon = new Dungeon(10,10);
+		Player player = new Player(dungeon, 1,10);
+		dungeon.setPlayer(player);
+		// test up
+		player.move(KeyCode.UP); 
+		assertEquals(player.getCoordinate(), new Point(1,9));
+		// test down
+		player.move(KeyCode.DOWN);
+		assertEquals(player.getCoordinate(), new Point(1,10));
+		// test right
+		player.move(KeyCode.RIGHT);
+		assertEquals(player.getCoordinate(), new Point(2,10));
+		// test left
+		player.move(KeyCode.LEFT); 
+		assertEquals(player.getCoordinate(), new Point(1,10));
+	}
+	
+	// test US1.2: walls as obstacles
+	// acceptance criteria
+	// a) No player should be able to move through a wall 
+	// b) No boulder should be able to move through a wall 
+	// c) No enemy should be able to move through a wall 
+
+	@Test
+	public void testUS1_2() {
+		Dungeon dungeon = new Dungeon(10,10);
+		Player player = new Player(dungeon, 1,10);
+		dungeon.setPlayer(player);
+		dungeon.addEntity(new Wall(2,10));
+		
+		// a) Test a player cannot walk through a wall (wall situated on player's right)
+		player.move(KeyCode.RIGHT);
+		assertEquals(player.getCoordinate(), new Point(1,10)); // check player's coordinate has not changed
+		
+		// b) Test a boulder cannot be moved through a wall (wall situated beneath boulder)
+		Boulder boulder = new Boulder(2,9);
+		dungeon.addEntity(boulder);
+		boulder.move(Direction.DOWN, dungeon); // attempt and fail to move the boulder down onto the wall, expect no update to its position
+		assertEquals(boulder.getCoordinate(), new Point(2,9));
+		
+		// c) Test an enemy should not be able to move through a wall
+		Enemy enemy = new Enemy(3,10, dungeon);
+		dungeon.addEntity(enemy);
+		enemy.move(Direction.LEFT, dungeon);
+		assertEquals(enemy.getCoordinate(), new Point(3,10));
+		// TODO: implement enemy move
+		
+	}
+	
+	
+	// test US1.3 unopened doors as obstacles
+	// acceptance criteria
+	// a) No player should be able to move through an unopened door 
+	// b) No boulder should be able to move through an unopened door 
+	// c) No enemy should be able to move through an unopened door 
+	
+	@Test
+	public void testUS1_3() {
+		Dungeon dungeon = new Dungeon(10,10);
+		Player player = new Player(dungeon, 1,10);
+		dungeon.setPlayer(player);
+		dungeon.addEntity(new Door(2,10, 1)); // doors start off in an unopened state
+		
+		// a) Test a player cannot walk through an unopened door
+		player.move(KeyCode.RIGHT);
+		assertEquals(player.getCoordinate(), new Point(1,10));
+		
+		// b) Test a boulder cannot be moved through an unopened door
+		Boulder boulder = new Boulder(2,9);
+		boulder.move(Direction.DOWN, dungeon);
+		assertEquals(boulder.getCoordinate(), new Point(2,9));
+		
+		// c) Test an enemy cannot be moved through an unopened door
+		Enemy enemy = new Enemy(3,10, dungeon);
+		dungeon.addEntity(enemy);
+		enemy.move(Direction.LEFT, dungeon);
+		assertEquals(enemy.getCoordinate(), new Point(3,10));
+	}
+	
+	// test US1.4 boulders as obstacles
+	// acceptance criteria
+	// a) No player should be able to move through an immovable boulder
+	// b) No boulder should be able to move through an immovable boulder 
+	// c) No enemy should be able to move through an immovable boulder 
+	// d) Immovable boulders are boulders that are immediately next to any of the following entities in the axis of the player’s/enemy’s direction of attempted movement: boulders, walls, unopened doors
+	
+	@Test
+	public void testUS1_4() {
+		Dungeon dungeon = new Dungeon(10,11);
+		Player player = new Player(dungeon, 1,10);
+		dungeon.setPlayer(player);
+		Boulder boulder1 = new Boulder(2,10);
+		dungeon.addEntity(boulder1); 
+		Boulder boulder2 = new Boulder(3,10);
+		dungeon.addEntity(boulder2);
+		Door door = new Door(2,9, 3);
+		dungeon.addEntity(door);
+		Wall wall = new Wall(3,11);
+		
+		// a) & d) Test a player cannot move through an immoveable boulder (boulder next to boulder)
+		player.move(KeyCode.RIGHT);
+		assertEquals(player.getCoordinate(), new Point(1,10)); // test player has not moved
+		assertEquals(boulder1.getCoordinate(), new Point(2,10)); // test boulder1 has not moved
+		assertEquals(boulder2.getCoordinate(), new Point(3,10)); // test boulder2 has not moved
+		
+		// b) & d) Test a boulder cannot move through an immoveable bouder (boulder next to door)
+		boulder1.move(Direction.UP, dungeon);
+		assertEquals(boulder1.getCoordinate(), new Point(2,10)); // test boulder1 has not moved
+		assertEquals(door.getCoordinate(), new Point(2,9)); // test door has not moved
+		
+		// c) & d) Test an enemy cannot move through an immoveable boulder (boulder next to a wall)
+		Enemy enemy = new Enemy(3,9, dungeon);
+		enemy.move(Direction.DOWN, dungeon);
+		assertEquals(enemy.getCoordinate(), new Point(4,10)); // test enemy has not moved
+		assertEquals(boulder1.getCoordinate(), new Point(2,10)); // test boulder1 has not moved
+		assertEquals(boulder2.getCoordinate(), new Point(3,10)); // test boulder2 has not moved
+		
+		// d) Test moveable boulders can move
+		
+		
+		
+	}
+	
+}

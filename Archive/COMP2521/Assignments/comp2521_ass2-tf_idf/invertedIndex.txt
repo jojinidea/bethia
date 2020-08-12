@@ -1,0 +1,58 @@
+and  url11.txt 
+apparent  url11.txt 
+ascribed  url11.txt url21.txt 
+attributed  url11.txt url21.txt 
+been  url11.txt 
+changes  url11.txt url21.txt 
+circle  url22.txt url23.txt 
+color  url11.txt url21.txt 
+cycles  url31.txt 
+design  url11.txt url21.txt 
+early  url11.txt 
+eu  url34.txt 
+experiments  url34.txt 
+features  url11.txt url21.txt 
+has  url11.txt 
+high  url23.txt 
+human  url11.txt 
+intelligent  url11.txt url21.txt 
+interest  url11.txt 
+japan  url34.txt 
+jupiter  url34.txt 
+jupitor  url23.txt 
+landing  url32.txt 
+light  url23.txt url31.txt 
+linear  url11.txt url21.txt 
+long  url11.txt 
+man  url32.txt 
+mars  url11.txt url21.txt url22.txt url23.txt url32.txt url34.txt 
+moon  url22.txt url23.txt url31.txt url32.txt url34.txt 
+moons  url23.txt 
+nasa  url34.txt 
+observations  url11.txt 
+of  url11.txt 
+on  url11.txt 
+planet  url32.txt url34.txt 
+planets  url34.txt 
+pluto  url22.txt url23.txt 
+promise  url32.txt 
+rays  url23.txt url31.txt 
+red  url32.txt 
+revealed  url11.txt url21.txt 
+robot  url34.txt 
+robotics  url32.txt 
+seasonal  url11.txt url21.txt url22.txt 
+small  url23.txt 
+subject  url11.txt 
+sun  url22.txt url23.txt url31.txt url32.txt 
+surface  url11.txt url21.txt 
+telescopic  url11.txt 
+that  url11.txt 
+the  url11.txt 
+to  url11.txt url21.txt 
+vegetation  url11.txt url21.txt 
+volcano  url23.txt url31.txt url32.txt url34.txt 
+waves  url23.txt 
+weather  url31.txt url32.txt url34.txt 
+were  url11.txt url21.txt 
+winds  url22.txt url23.txt 

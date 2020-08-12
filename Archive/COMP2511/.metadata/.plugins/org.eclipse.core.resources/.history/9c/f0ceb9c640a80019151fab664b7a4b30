@@ -1,0 +1,23 @@
+package unsw.dungeon;
+
+public class ItemUsedState implements ItemState{
+
+	@Override
+	public void use(Player player, Dungeon dungeon) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void activate(Player player, Dungeon dungeon) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void collect(Dungeon dungeon, Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

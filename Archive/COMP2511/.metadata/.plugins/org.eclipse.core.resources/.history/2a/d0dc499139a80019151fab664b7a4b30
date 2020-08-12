@@ -1,0 +1,10 @@
+package unsw.dungeon;
+
+public class Treasure extends Item{
+	
+	public Treasure(int x, int y) {
+		super(x, y);
+		setUseBehaviour(new UseUnuseable()); // TODO: create obstacle behaviour interface for items that can be picked up/walked through
+		setAddable(true);
+	}
+}

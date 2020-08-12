@@ -1,0 +1,49 @@
+package unsw.dungeon;
+
+public class ItemBoardState implements ItemState {
+	
+	// board state - item is on board and NOT active
+	// board items can be collected (moved from board to inventory) and removed (from the dungeon if applicable)
+	// board items cannot be used, or activated
+	
+	private Item item;
+	
+	public ItemBoardState(Item item) {
+		this.item = item;
+	}
+
+	@Override
+	public void use(Player player, Dungeon dungeon) {
+		// Board state items cannot be used directly 
+		
+	}
+
+	@Override
+	public void activate(Player player, Dungeon dungeon) {
+		// Board state items cannot be activated directly
+		
+	}
+
+	@Override
+	public void collect(Dungeon dungeon, Player player) {
+		// Board state items can be collected
+		// remove item from dungeon, add to inventory
+		player.addToInventory(this.getItem());
+		dungeon.removeEntity(this.getItem());
+		this.getItem()
+		
+		
+	}
+
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
+	}
+	
+	
+
+	
+}

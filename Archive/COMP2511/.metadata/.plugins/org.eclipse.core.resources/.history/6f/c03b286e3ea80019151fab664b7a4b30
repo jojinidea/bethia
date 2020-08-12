@@ -1,0 +1,49 @@
+package unsw.dungeon;
+
+public class UseSword implements UseBehaviour {
+	
+	private Sword sword;
+	
+	public UseSword(Sword sword) {
+		setSword(sword);
+	}
+	
+	
+	
+	
+	// MIGHT NEED TO CHANGE USE SWORD IMPLEMENTATION
+	@Override
+	public void use(Player player, Dungeon dungeon) {
+		// invoked if the player is on the same square as the enemy (error checking before this). Assumes the enemy and player are on the same square
+		this.getSword().decrementHits(); // TODO: remove the enemy
+		// EQUIP SWORD?? then check when moving onto a square with an enemy if we have anything equipped?? if it is a sword, kill enemy 
+		// remove the enemy
+		for (Entity e : dungeon.getEntities()) {
+		// if the enemy is on the same coordinate as the player
+			if (dungeon.sameCoordinate(player, e)) {
+				e.removeEnemy(dungeon);
+			}
+		}
+	
+	}
+	
+	public boolean isUseable() {
+		if (this.getSword().getHitsRemaining() > 0) {
+			return true;
+		}
+	return false;
+	}
+
+
+	public Sword getSword() {
+		return sword;
+	}
+
+
+	public void setSword(Sword sword) {
+		this.sword = sword;
+	}
+	
+	
+
+}

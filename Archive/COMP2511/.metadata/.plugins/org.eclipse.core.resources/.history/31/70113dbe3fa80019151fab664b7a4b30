@@ -1,0 +1,28 @@
+package unsw.dungeon;
+
+public class ItemBoardState implements ItemState {
+	
+	// board state - item is on board and NOT active
+	// board items can be collected (moved from board to inventory) and removed (from the dungeon if applicable)
+	// board items cannot be used, or activated
+
+	@Override
+	public void use(Player player, Dungeon dungeon) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void activate(Player player, Dungeon dungeon) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void collect(Dungeon dungeon, Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}
